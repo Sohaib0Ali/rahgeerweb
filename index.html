@@ -29,19 +29,49 @@
                     <img src="assets/icons/logo.png" alt="Rahgeer-e-Harmain">
                     <span class="startup-name">Rahgeer-e-Harmain</span>
                 </div>
+                <!-- Hamburger Menu Button -->
+                <div class="hamburger" onclick="toggleMenu()">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
                 <!-- Navigation Menu -->
                 <nav class="nav-menu">
                     <ul>
-                        <li><a href="#intropart">Home</a></li>
-                        <li><a href="#benefitsaccess">Benefits</a></li>
-                        <li><a href="#aboutusaccess">About</a></li>
-                        <li><a href="#contactaccess">Contact Us</a></li>
+                        <li><a href="#intropart" onclick="closeMenu()">Home</a></li>
+                        <li><a href="#benefitsaccess" onclick="closeMenu()">Benefits</a></li>
+                        <li><a href="#aboutusaccess" onclick="closeMenu()">About</a></li>
+                        <li><a href="#contactaccess" onclick="closeMenu()">Contact Us</a></li>
                     </ul>
                 </nav>
                 <!-- Call-to-Action Button -->
                 <a href="https://play.google.com/store/apps" target="_blank" class="cta-button">Download the App</a>
             </div>
         </header>
+        
+        <!-- JavaScript for Toggle Menu -->
+        <script>
+            function toggleMenu() {
+                const navMenu = document.querySelector('.nav-menu ul');
+                navMenu.classList.toggle('show');
+            }
+        
+            function closeMenu() {
+                const navMenu = document.querySelector('.nav-menu ul');
+                navMenu.classList.remove('show');
+            }
+        
+            // Close the menu when clicking outside of it
+            window.onclick = function(event) {
+                const navMenu = document.querySelector('.nav-menu ul');
+                const hamburger = document.querySelector('.hamburger');
+        
+                if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+                    navMenu.classList.remove('show');
+                }
+            };
+        </script>
+        
 
 
         <section style="padding-top: 100px;" class="section1" id="intropart">
