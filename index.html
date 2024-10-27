@@ -45,7 +45,35 @@
                     </ul>
                 </nav>
                 <!-- Call-to-Action Button -->
-                <a href="https://play.google.com/store/apps" target="_blank" class="cta-button">Download the App</a>
+                <!-- Download Button with Onclick Event for Notification -->
+<a href="#" class="cta-button" onclick="showDownloadNotification(event)">Download the App</a>
+
+<!-- Notification Message (hidden by default) -->
+<div id="download-notification" class="download-notification" style="display: none;">
+    Application will be available soon!
+</div>
+
+<script>
+    // Function to show notification
+    function showDownloadNotification(event) {
+        // Prevent default anchor behavior
+        event.preventDefault();
+
+        // Select the notification element
+        const notification = document.getElementById('download-notification');
+
+        // Show and animate the notification
+        notification.style.display = 'block';
+        notification.style.opacity = '1';
+        setTimeout(() => {
+            notification.style.opacity = '0';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 500);
+        }, 2000); // Notification remains visible for 2 seconds
+    }
+</script>
+
             </div>
         </header>
         
