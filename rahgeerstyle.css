@@ -9,6 +9,7 @@
 
 /* Sticky Header */
 /* Existing CSS Code */
+/* General Styling */
 .sticky-header {
     position: fixed;
     top: 0;
@@ -20,12 +21,6 @@
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.sticky-header.scrolled {
-    background-color: #f8f8f8;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-/* Container */
 .header-container {
     max-width: 1200px;
     margin: 0 auto;
@@ -35,7 +30,6 @@
     padding: 0 20px;
 }
 
-/* Logo */
 .logo img {
     height: 50px;
     transition: transform 0.3s ease;
@@ -45,7 +39,6 @@
     transform: scale(1.1);
 }
 
-/* Navigation Menu */
 .nav-menu ul {
     display: flex;
     list-style: none;
@@ -69,7 +62,6 @@
     border-radius: 5px;
 }
 
-/* CTA Button */
 .cta-button {
     padding: 10px 20px;
     background-color: #358666;
@@ -80,17 +72,6 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.cta-button:hover {
-    /* background-color: #358666; */
-    color:#f4f4f4;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.cta-button:active {
-    transform: scale(0.95); /* Scale down on click */
-    /* background-color: #d1a700; Change background color on click */
-    /* color: #0d0d0d; */
-}
 .download-notification {
     position: fixed;
     bottom: 20px;
@@ -101,11 +82,9 @@
     border-radius: 8px;
     box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
     font-size: 1rem;
-    /* font-weight: bold; */
     transition: opacity 0.5s ease;
     z-index: 1001;
 }
-
 
 .startup-name {
     font-size: 1.5rem;
@@ -115,74 +94,55 @@
     margin: auto;
 }
 
-/* Section Padding */
-.section1 {
-    padding-top: 30px; /* Ensures content doesn't hide behind the header */
-}
-
 /* Mobile Styles */
 /* Mobile Styles */
 @media (max-width: 768px) {
-    .header-container {
-        flex-direction: column; /* Stack elements vertically */
-        align-items: flex-start; /* Align items to the left */
-        padding: 10px; /* Reduce padding */
+    .sticky-header {
+        position: static;
     }
 
-    /* Navigation Menu */
+    .header-container {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px;
+    }
+
     .nav-menu ul {
-        display: none; /* Hide menu by default */
-        flex-direction: column; /* Stack menu items vertically */
-        width: 100%; /* Full width for mobile menu */
-        padding: 10px 0; /* Add padding for menu */
-        background-color: #f4f4f4; /* Background color for dropdown */
-        position: absolute; /* Position menu below header */
-        top: 60px; /* Adjust based on header height */
+        display: none; /* Hide by default */
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 0;
+        background-color: #f4f4f4;
+        position: absolute;
+        top: 60px;
         left: 0;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        z-index: 999; /* Make sure it appears above other content */
+        z-index: 999;
     }
 
     .nav-menu ul.show {
-        display: flex; /* Show menu when toggled */
+        display: flex; /* Show when toggled */
     }
 
-    .nav-menu ul li {
-        margin: 10px 0; /* Vertical spacing for menu items */
-        width: 100%; /* Full width for menu items */
-    }
-
-    .nav-menu ul li a {
-        padding: 10px; /* Larger touch targets */
-        text-align: center; /* Center align text */
-        width: 100%; /* Full width for links */
-    }
-
-    /* Hamburger Menu Button */
     .hamburger {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        width: 30px; /* Adjust as needed */
-        height: 20px; /* Adjust as needed */
+        width: 30px;
+        height: 20px;
         cursor: pointer;
     }
 
     .hamburger div {
         height: 3px;
-        background-color: #000; /* Color of hamburger lines */
+        background-color: #000;
         transition: all 0.3s ease;
     }
 
     .cta-button {
-        width: 100%; /* Full width for button on mobile */
-        margin-top: 10px; /* Add spacing above the button */
+        display: none;
     }
 }
-
-
-
-
 /* intro section  */
 
 .intro-section {
@@ -288,164 +248,7 @@ body {
     /* justify-content: center; */
     /* align-items: center; */
     min-height: 100vh;
-}
-
-/* Timeline Slider Styles */
-.timeline-slider {
-    position: relative;
-    max-width: 80%; /* Set max width for an attractive layout */
-    margin: auto; /* Center the slider on the page */
-    overflow: hidden;
-    background-color: #f4f4f4; /* Light background */
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Box shadow for better depth */
-}
-
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    box-sizing: border-box;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    position: relative;
-    opacity: 0;
-    transform: scale(0.9);
-    animation: fadeInScale 0.6s forwards;
-}
-
-@keyframes fadeInScale {
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-.slide-image {
-    width: 300px;  /* Square image */
-    height: 300px; /* Square image */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    object-fit: cover;
-    margin-bottom: 20px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.slide-image:hover {
-    transform: scale(1.05);
-}
-
-.slide-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
-
-.slide-heading {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    text-align: center;
-    align-self: center;
-}
-
-.slide-text {
-    font-size: 16px;
-    text-align: center;
-    margin-top: 10px;
-}
-
-/* Redesigned Navigation Buttons */
-.prev, .next {
-    border: 2px solid #000; /* Outline border without color fill */
-    background-color: transparent; /* No background color */
-    border-radius: 50%; /* Circular buttons */
-    cursor: pointer;
-    padding: 12px 18px;
-    position: absolute;
-    font-size: 20px;
-    z-index: 10;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.2s ease;
-    top: calc(100% + 20px); /* Position outside the slider */
-}
-
-.prev {
-    left: 35%; /* Position previous button towards the left */
-}
-
-.next {
-    right: 35%; /* Position next button towards the right */
-}
-
-.prev:hover, .next:hover {
-    transform: scale(1.1); /* Slight zoom-in on hover */
-}
-
-.prev:after, .next:after {
-    content: ''; 
-    display: inline-block;
-    border: solid black; /* Simple black border for arrows */
-    border-width: 0 4px 4px 0;
-    padding: 10px;
-}
-
-.prev:after {
-    transform: rotate(135deg); /* Left arrow */
-}
-
-.next:after {
-    transform: rotate(-45deg); /* Right arrow */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .slide {
-        padding: 10px;
-    }
-
-    .slide-image {
-        height: 200px;
-        width: 200px; /* Adjust height and width for smaller screens */
-        margin-bottom: 15px;
-    }
-
-    .slide-heading {
-        font-size: 20px;
-    }
-
-    .slide-text {
-        font-size: 14px;
-    }
-
-    .prev, .next {
-        padding: 10px;
-        font-size: 18px;
-        top: calc(100% + 10px); /* Adjust button position for smaller screens */
-    }
-
-    .prev {
-        left: 30%;
-    }
-
-    .next {
-        right: 30%;
-    }
-}
-
-
-
-
-
-
-.background-image {
+}.background-image {
     position: absolute;
     top: 0;
     left: 0;

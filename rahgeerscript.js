@@ -1,24 +1,32 @@
-let slideIndex = 0;
-const slides = document.querySelector('.slides');
-const totalSlides = document.querySelectorAll('.slide').length;
-
-function showSlide(index) {
-    if (index >= totalSlides) slideIndex = 0;
-    else if (index < 0) slideIndex = totalSlides - 1;
-    else slideIndex = index;
-
-    const offset = -slideIndex * 100;
-    slides.style.transform = `translateX(${offset}%)`;
+function toggleMenu() {
+    const navMenu = document.querySelector('.nav-menu ul');
+    navMenu.classList.toggle('show');
 }
 
-function moveSlide(n) {
-    showSlide(slideIndex + n);
+function closeMenu() {
+    const navMenu = document.querySelector('.nav-menu ul');
+    navMenu.classList.remove('show');
 }
 
-// Auto-slide feature
-setInterval(() => {
-    moveSlide(1);
-}, 5000); // Change slide every 5 seconds
+// Close the menu when clicking outside of it
+window.onclick = function(event) {
+    const navMenu = document.querySelector('.nav-menu ul');
+    const hamburger = document.querySelector('.hamburger');
+    if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+        navMenu.classList.remove('show');
+    }
+};
 
-// Initial display
-showSlide(slideIndex);
+// Show download notification
+function showDownloadNotification(event) {
+    event.preventDefault();
+    const notification = document.getElementById('download-notification');
+    notification.style.display = 'block';
+    notification.style.opacity = '1';
+    setTimeout(() => {
+        notification.style.opacity = '0';
+        setTimeout(() => {
+            notification.style.display = 'none';
+        }, 500);
+    }, 2000);
+}
