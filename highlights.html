@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rahgeer-e-Harmain Highlights</title>
+    <link rel="stylesheet" href="highlightstyle.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="header">
+        <div class="logo-container">
+            <img src="assets/icons/logo.png" alt="Logo" class="logo">
+            <h1 class="animated-heading">Rahgeer-e-Harmain</h1>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <nav class="menu" id="menu">
+            <a href="index.html">Home</a>
+            <a href="updates.html">Updates</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="content">
+        <section class="highlights">
+            <h2>Highlights</h2>
+            <div class="media-grid">
+                <div class="media-item" onclick="openModal('assets/images/img1.jpg', 'Elevator Pitch Competition')">
+                    <img src="assets/images/img1.jpg" alt="pitch presentation">
+                    <div class="media-description">Elevator Pitch Competition</div>
+                </div>
+                <div class="media-item" onclick="openModal('assets/images/img2.jpg', 'Elevator Pitch Competition')">
+                    <img src="assets/images/img2.jpg" alt="Highlight Elevator Pitch competition">
+                    <div class="media-description">Elevator Pitch Competition</div>
+                </div>
+                <div class="media-item" onclick="openModal('assets/images/img3.jpg', 'Elevator Pitch Competetion at Air University Auditorium')">
+                    <img src="assets/images/img3.jpg" alt="Highlight Elevator pitch competition">
+                    <div class="media-description">Elevator Pitch Competetion at Air University Auditorium</div>
+                </div>
+                <div class="media-item" onclick="openModal('assets/images/img4.jpg', 'According to first three month progress, Best Founder of RP9 Kharian Center')">
+                    <img src="assets/images/img4.jpg" alt="Best Founder">
+                    <div class="media-description">Best Founder of RP9 Kharian Center</div>
+                </div>
+                <div class="media-item" onclick="openModal('assets/images/img5.jpg', 'In this meeting, a long discussion with team members on the markeet and user required functionalities.')">
+                    <img src="assets/images/img5.jpg" alt="Meeting highlights">
+                    <div class="media-description">In this meeting, a long discussion with team members on the markeet and user required functionalities.</div>
+                </div>
+                <div class="media-item" onclick="openModal('assets/images/img6.jpg', 'Team Rahgeer-e-Harmain')">
+                    <img src="assets/images/img6.jpg" alt="Team group photo">
+                    <div class="media-description">Team Rahgeer-e-Harmain</div>
+                </div>
+                <div class="media-item" onclick="openModal('assets/images/img7.jpg', 'This amazing program conducted by YIGF in which particpants from twenty countries are included for the designing of rules for internet over the Asia and whole world.')">
+                    <img src="assets/images/img7.jpg" alt="YIGF session highlights">
+                    <div class="media-description">This amazing program conducted by YIGF in which particpants from twenty countries are included for the designing of rules for internet over the Asia and whole world.</div>
+                </div>
+                <div class="media-item" onclick="openModal('assets/images/img8.jpg', 'Brand Identity of Rahgeer-e-Harmain')">
+                    <img src="assets/images/img8.jpg" alt="Brand identity">
+                    <div class="media-description">Your Complete Hajj and Umrah Companion</div>
+                </div>
+                
+                <div class="media-item" onclick="openModal('assets/videos/elevator_pitch.mp4', 'Startup Introduction', true)">
+                    <video controls src="assets/videos/elevator_pitch.mp4"></video>
+                    <div class="media-description">A short introduction of our Startup</div>
+                </div>
+                <div class="media-item" onclick="openModal('assets/videos/team_introduction.mp4', 'Introduction of Team Rahgeer-e-Harmain', true)">
+                    <video controls src="assets/videos/team_introduction.mp4"></video>
+                    <div class="media-description">Introduction of Team Rahgeer-e-Harmain</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal for Viewing Images/Videos -->
+    <div id="mediaModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="modal-content">
+            <img id="modalImage" class="modal-media" src="" alt="">
+            <video id="modalVideo" class="modal-media" controls></video>
+            <p id="modalDescription" class="modal-description"></p>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <a href="https://rahgeerharmain.blogspot.com/2024/10/the-role-of-technology-in-pilgrimage.html" target="_blank" class="footer-link">Our Blog</a>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/profile.php?id=61563791073107" target="_blank"><img src="assets/icons/facebook.png" alt="Facebook"></a>
+            <a href="https://www.instagram.com/rahgeer.harmain/" target="_blank"><img src="assets/icons/instagram.png" alt="Instagram"></a>
+        </div>
+        <p>&copy; 2024 <strong>Rahgeer-e-Harmain</strong>. All rights reserved.</p>
+    </footer>
+
+    <script src="highlightscript.js"></script>
+</body>
+</html>

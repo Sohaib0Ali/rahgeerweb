@@ -206,11 +206,13 @@
 
     /* Reduced padding to remove gap */
     .section1 {
-        padding-top: 60px; /* Further reduced for mobile */
+        padding-top: 1px; /* Further reduced for mobile */
     }
 
     .intro-section {
-        padding: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 10px;
     }
 
     .intro-container {
@@ -228,11 +230,13 @@
 
 @media (max-width: 480px) {
     .section1 {
-        padding-top: 50px; /* Minimized padding for very small screens */
+        padding-top: 1px; /* Minimized padding for very small screens */
     }
 
     .intro-section {
-        padding: 5px;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 5px;
     }
 
     .intro-container {
