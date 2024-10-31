@@ -167,19 +167,42 @@
     }
 
     .nav-menu ul {
-        display: none;
+        display: none; /* Hidden by default, displayed on menu click */
         flex-direction: column;
-        width: 50%;
-        padding: 10px 10px;
+        justify-content: space-around; /* Space items evenly across the height */
+        align-items: center;
+        width: 40%;
+        height: 50vh; /* Full viewport height for mobile dropdown */
+        padding: 20px 10px;
         background-color: #f4f4f4;
         position: absolute;
-        top: 60px;
-        left: 40%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        top: 10%;
+        left: 62%;
+        transform: translateX(-50%); /* Center menu horizontally */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         z-index: 999;
-        /* border: 1px solid rgba(53, 134, 102, 1); */
-        border-radius: 5px;
+        border-radius: 10px 10px 0 0; /* Rounded top corners */
     }
+    
+    .nav-menu ul li {
+        width: 100%; /* Each item takes full width */
+        text-align: center; /* Center text */
+        padding: 15px 0; /* Add vertical padding for easier clicks */
+        color: #333;
+    }
+    
+    .nav-menu ul li a {
+        text-decoration: none;
+        color: #333; /* Dark text for contrast */
+        font-size: 18px; /* Increase font size for readability */
+        width: 100%;
+    }
+    
+    .nav-menu ul li:hover {
+        /* background-color: #ddd; */
+        border-radius: 5px; /* Rounded corners on hover */
+    }
+    
 
     .nav-menu ul.show {
         display: flex;
